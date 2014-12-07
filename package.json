@@ -1,0 +1,24 @@
+{
+  "name": "etsy_crawler",
+  "version": "0.0.1",
+  "description": "This module is used for crawling products from etsy.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sam Zhao",
+  "dependencies": {
+    "async": ">=0.6.2",
+    "cheerio": ">=0.13.1",
+    "csv": "0.3.7",
+    "csv-parse": "0.0.2",
+    "csv-stringify": "0.0.2",
+    "html-minifier": "^0.6.1",
+    "moment": "^2.8.4",
+    "mongoose": ">=3.8.8",
+    "mysql": "^2.5.3",
+    "request": ">=2.36.0",
+    "winston": "0.7.3"
+  },
+  "license": "BSD-2-Clause"
+}
