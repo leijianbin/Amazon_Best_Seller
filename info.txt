@@ -1,0 +1,4 @@
+<<<<<<< HEAD
+=======
+0511189877	http://www.amazon.com/dp/0511189877	CLIKR-5 Time Warner Cable Remote Control UR5U-8780L	http://ecx.images-amazon.com/images/I/81N7YLcw1ML._SY679_.jpg	17	4.6	19.97	19.97	N/A		2014-12-17 00:12:75
+>>>>>>> 395034e3be2e39fdcfade87310a77abc0ef9614d
