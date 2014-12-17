@@ -18,7 +18,7 @@ product_files.forEach(function(element){
 //	console.log(element);
 var asin = element.replace('page-','');
 var url = 'http://www.amazon.com/dp/' + asin;
-console.log(url);
+//console.log(url);
 var body = fs.readFileSync(product_directory + element,'utf8');
 var $ = cheerio.load(body);
 
@@ -63,7 +63,7 @@ var $ = cheerio.load(body);
 				}
 			}
 			var rank_div = $('#SalesRank span');
-			console.log(rank_div)
+			//console.log(rank_div)
 			var rank = 'N/A';
 			var category = '';
 			if (rank_div.length != 0){ //There are some products without rank
@@ -101,8 +101,8 @@ var $ = cheerio.load(body);
 		};
 //		console.log(result);
 var data = asin + '\t' + url + '\t'+title + '\t' + image_url +'\t'+review_num + '\t'+review_star + '\t' + min_price + '\t' + max_price+ '\t'+rank +'\t'+category + '\t' + current_date;
-console.log(data);
-		//console.log(rank);
+		//console.log(data);
+		console.log("Fetch info sucess!");
 		fs.writeFileSync(info_file, data, {flag:'a'});
 	}
 });
