@@ -18,6 +18,7 @@ product_files.forEach(function(element){
 //	console.log(element);
 	var asin = element.replace('page-','');
 	var url = 'http://www.amazon.com/dp/' + asin;
+	console.log(url);
 	var body = fs.readFileSync(product_directory + element,'utf8');
 		var $ = cheerio.load(body);
 		var title = $('#productTitle')? $('#productTitle').text().replace('\n',' '):'N/A';

@@ -1,1 +1,2 @@
 {"code":"ECONNREFUSED","errno":"ECONNREFUSED","syscall":"connect","fatal":true,"level":"info","message":"","timestamp":"2014-12-04T01:38:05.051Z"}
+{"code":"ENETDOWN","errno":"ENETDOWN","syscall":"read","level":"error","message":"","timestamp":"2014-12-17T05:10:17.930Z"}

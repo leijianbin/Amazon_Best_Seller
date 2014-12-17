@@ -18,11 +18,11 @@ function get_asin_from_file(filename){
 	// console.log($('.s-result-item').length);
     // console.log('works');
     $('.s-result-item').each(function(){
-		console.log($(this).data('asin'));
+		//console.log($(this).data('asin'));
 		fs.appendFile(asin_file, $(this).data('asin') + "\n", function(err) {
 		    if(err) {
 		        console.log(err);
 		    }
-		}); 
+		});
 	});
 }
