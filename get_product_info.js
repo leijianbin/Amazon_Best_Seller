@@ -63,9 +63,10 @@ var $ = cheerio.load(body);
 				}
 			}
 			var rank_div = $('#SalesRank span');
+			console.log(rank_div)
 			var rank = 'N/A';
 			var category = '';
-			if (rank_div){
+			if (rank_div.length != 0){ //There are some products without rank
 			//rank_div.children().remove();
 			var rank = $('#SalesRank span')[0]['children'][0]['data'];
 			rank = rank.replace('#','');
