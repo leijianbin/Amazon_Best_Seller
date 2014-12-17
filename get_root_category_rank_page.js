@@ -13,7 +13,12 @@ var logger = new (winston.Logger)({
       new (winston.transports.File)({ filename: 'get_top_rank_page.log' })
     ]
   });
-var root_category = 3375301;
+
+var root_category = 3375301; // root category id
+
+// Sport & Outdoor:           3375301
+// Electronics & Computers:    
+
 var queue = async.queue(save_page, maximum_concurrency);
 for (var i = 1; i <= 5; i++){
         queue.push({category_id: root_category, page_id: i }, function(msg){

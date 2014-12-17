@@ -57,16 +57,22 @@ product_files.forEach(function(element){
 		var rank = 'N/A';
 		var category = '';
 		if (rank_div){
-			rank_div.children().remove();
-			var rank_text = rank_div.text().trim();
-			if (rank_text.indexOf('Sports') > 0){
-				rank = rank_text.match(/\d+,\d+|\d+|\d+,\d+,\d+/)[0];
-				rank = rank.replace(',','');
-				category = 'Sports';
+			//rank_div.children().remove();
+			var rank = $('#SalesRank span')[0]['children'][0]['data'];
+			rank = rank.replace('#','');
+			// console.log(rank);
+			//console.log(rank_text);
+			if (rank != "N/A"){
+				// rank = rank_text.match(/\d+,\d+|\d+|\d+,\d+,\d+/)[0];
+				// rank = rank.replace(',','');
+				var testcategory = $('#SalesRank span a')[0]['children'][0]['data'];
+				// console.log(testcategory);
+				//category = 'Electronics';
 			}else{
 				rank = 0;
 				category = 'Others';
 			}
+			//console.log(category);
 			// .match(/\d+,\d+|\d+/)[0];
 		}
 		var result = {
@@ -86,7 +92,8 @@ product_files.forEach(function(element){
 //		console.log(result);
 		var data = asin + '\t' + url + '\t'+title + '\t' + image_url +'\t'+review_num + '\t'+review_star + '\t' + min_price + '\t' + max_price+ '\t'+rank +'\t'+category + '\t' + current_date;
 		console.log(data);
-//		fs.writeFileSync(info_file, data, {flag:'a'});
+		//console.log(rank);
+		fs.writeFileSync(info_file, data, {flag:'a'});
 });
 
 
