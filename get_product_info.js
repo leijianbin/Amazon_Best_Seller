@@ -74,7 +74,7 @@ else {
 			if (rank != "N/A"){
 				// rank = rank_text.match(/\d+,\d+|\d+|\d+,\d+,\d+/)[0];
 				// rank = rank.replace(',','');
-				var testcategory = $('#SalesRank span a')[0]['children'][0]['data'];
+				var category = $('#SalesRank span a')[0]['children'][0]['data'];
 					// console.log(testcategory);
 					//category = 'Electronics';
 				} else {
