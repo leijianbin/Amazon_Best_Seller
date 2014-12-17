@@ -54,7 +54,7 @@ product_files.forEach(function(element){
 					min_price = max_price = price_array[0];
 				}
 		}
-		var rank_div = $('#SalesRank');
+		var rank_div = $('#SalesRank span');
 		var rank = 'N/A';
 		var category = '';
 		if (rank_div){
