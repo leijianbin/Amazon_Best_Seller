@@ -5,6 +5,8 @@ var request = require('request'),
     fs    = require('fs');
 
 var maximum_concurrency = 20;
+var maximum_list_pages = 80;
+
 var storage_directory = 'pages/'
 var error_string = "500 Service Unavailable Error"
 var logger = new (winston.Logger)({
@@ -13,7 +15,7 @@ var logger = new (winston.Logger)({
       new (winston.transports.File)({ filename: 'get_top_rank_page.log' })
     ]
   });
-var root_category = 3375301
+// var root_category = 3375301
 
 var queue = async.queue(save_page, maximum_concurrency);
 async.waterfall([
@@ -25,15 +27,27 @@ async.waterfall([
     queue.empty = function(){
       console.log("queue is empty now");
     };
-    //sports&outdoor: 
-    //results = ["706812011", "3403201", "3421331", "3407321", "3407731", "3410851", "706813011", "706808011", "706814011", "706815011", "706816011", "2204518011", "706809011", "706810011", "3394801", "2206626011", "3386071"];
-    //Electronic&Computer:
-    results = ["1266092011", "667846011", "502394", "2335752011", "468642", "172630", "1077068", "11091801", "5745855011", "9013937011", "4972214011", "172456", "193870011", "229534", "172635", "1064954", "2226766011"]; // 17 items
-
+    //1. sports&outdoor: 
+    results = ["706812011", "3403201", "3421331", "3407321", "3407731", "3410851", "706813011", "706808011", "706814011", "706815011", "706816011", "2204518011", "706809011", "706810011", "3394801", "2206626011", "3386071"];
+    // results = ["706812011"]
+    //2. home
+    // results = ["1055398", "284507", "1057794", "1057792", "2619525011", "2972638011", "6685269011", "2617941011", "2619533011", "228013", "328182011", "495224", "3754161", "511228", "6563140011"]
+    
+    //3. beauty
+    // results = ["16310101", "51537011", "2255571011", "2983386011", "3760911", "7175545011", "6682399011", "3760901", "10787321"]
+    
+    //4. Electronic&Computer:
+    //results = ["1266092011", "667846011", "502394", "2335752011", "468642", "172630", "1077068", "11091801", "5745855011", "9013937011", "4972214011", "172456", "193870011", "229534", "172635", "1064954", "2226766011"]; // 17 items
+    
+    //5. Toy
+    // results = []
+    
+    //6. Clothing
+    // results = []
 
     results.forEach(function(element){
       console.log(element)
-      for (var i = 1; i <= 100; i++){
+      for (var i = 1; i <= maximum_list_pages; i++){
         queue.push({category_id: element, page_id: i }, function(msg){
           console.log(msg);
         })  

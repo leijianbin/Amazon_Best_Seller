@@ -5,7 +5,7 @@ var request = require('request'),
     fs    = require('fs');
 
 var maximum_concurrency = 20;
-var storage_directory = 'pages/';
+var storage_directory = 'top100-pages/';
 var error_string = "500 Service Unavailable Error";
 var logger = new (winston.Logger)({
     transports: [
@@ -14,7 +14,7 @@ var logger = new (winston.Logger)({
     ]
   });
 
-var root_category = 3375301; // root category id
+var root_category = 3375301; // root category id, where to get the root id
 
 // Sport & Outdoor:           3375301
 // Electronics & Computers:    
